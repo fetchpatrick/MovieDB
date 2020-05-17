@@ -1,7 +1,15 @@
-import React from 'react'
+/* eslint-disable no-unused-expressions */
+import React from 'react';
 
-const Grid = () => {
-    <div>Grid</div>
-}
+import { StyledGrid, StyledGridContent } from '../styles/StyledGrid';
 
-export Deafault Grid;
+const Grid = ({ header, children }) => {
+	return (
+		<StyledGrid>
+			<h1>{header}</h1>
+			<StyledGridContent>{children}</StyledGridContent>
+		</StyledGrid>
+	);
+};
+
+export default Grid;
