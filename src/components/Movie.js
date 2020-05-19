@@ -9,15 +9,21 @@ import Spinner from './elements/Spinner';
 
 const Movie = ({ movieId }) => {
 	const [movie, loading, error] = useMovieFetch(movieId);
+
+	if (error) {
+		return <div>Something Went Wrong...</div>;
+	}
+	if (loading) {
+		return <Spinner />;
+	}
 	return (
 		<>
-			<Navigation />
+			<Navigation movie={movie.original_title} />
 			<MovieInfo />
 			<MovieInfoBar />
 			<Grid>
 				<Actor />
 			</Grid>
-			<Spinner />
 		</>
 	);
 };
