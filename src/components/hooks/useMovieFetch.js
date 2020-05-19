@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import { API_URL, API_KEY } from '../../config';
 
-export const useMoviefetch = (movieId) => {
-	const [state, useState] = useState({});
+const useMoviefetch = (movieId) => {
+	const [state, setState] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 
@@ -13,16 +13,18 @@ export const useMoviefetch = (movieId) => {
 		try {
 			const endpoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
 			const result = await (await fetch(endpoint)).json();
-			console.log(result);
 			const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
 
 			const creditsResults = await (await fetch(creditsEndpoint)).json();
 
-			const directors = creditsResult.crew.filter(
+			const directors = creditsResults.crew.filter(
 				(member) => member.job === 'Director'
 			);
-
-			console.log(creditsResult);
+			setState({
+				...result,
+				actors: creditsResults.cast,
+				directors
+			});
 		} catch (error) {
 			setError(true);
 		}
@@ -34,3 +36,5 @@ export const useMoviefetch = (movieId) => {
 	}, [fetchData]);
 	return [state, loading, error];
 };
+
+export default useMoviefetch;

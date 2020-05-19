@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMovieFetch } from './hooks/useMovieFetch';
+import useMovieFetch from './hooks/useMovieFetch';
 import Navigation from './elements/Navigation';
 import MovieInfo from './elements/MovieInfo';
 import MovieInfoBar from './elements/MovieInfoBar';
