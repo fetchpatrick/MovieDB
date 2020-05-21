@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@reach/router';
-import TMDB from '../images/tmdb_logo.svg';
+import TMDB from '../images/theMovieDb.png';
 import {
 	StyledHeader,
 	StyledTMDBLogo,
