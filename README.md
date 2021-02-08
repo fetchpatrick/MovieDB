@@ -10,11 +10,11 @@ MovieDb is an application built for the user that wants an easy, quick way to fi
 * [Movie Database](https://www.themoviedb.org/documentation/api) *Movie Information Source*
 
 ## Technologies And Tools
-> * React Front End for an intuitive, performant User Interface
-> * Custom React Hooks used with state management and code reusability in mind
-> * Utilized Axios to simplify communication with The Movie Database Api
-> * Incorporated Styled Components to create a beautifully intuitive, and responsive layouts
-> * Netlify Deployment
+* React Front End for an intuitive, performant User Interface
+* Custom React Hooks used with state management and code reusability in mind
+* Utilized Axios to simplify communication with The Movie Database Api
+* Incorporated Styled Components to create a beautifully intuitive, and responsive layouts
+* Netlify Deployment
 
 ## Challenges
 * Implementation of React Hooks in the beginning
